@@ -1,0 +1,141 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box; 
+}
+:root {
+  --db: hsl(240, 38%, 20%);
+  --gb: hsl(240, 18%, 77%);
+}
+@font-face {
+  font-family: 'Inter';
+  src: url(../Font/Inter-VariableFont_slnt\,wght.ttf);
+}
+.icon {
+  width: 1em;
+  height: 1em;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--db);
+  background-image: url(../images/pattern-curve.svg),
+  url(../images/pattern-bg.svg);
+  background-position: 0% 100%, 100% 0%;
+  background-repeat: no-repeat;
+  background-size: 50%, 60%;
+  height: 100vh;
+}
+section {
+  margin: 2em auto;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  row-gap: 2em;
+}
+section > * {
+  flex: 1;
+}
+section .txt {
+  align-self: center;
+  position: relative;
+  z-index: 999;
+  transform: translateX(30%);
+}
+.txt::after {
+  content: '';
+  background: url(../images/pattern-quotes.svg) no-repeat center;
+  background-size: contain;
+  position: absolute;
+  top: 0%;
+  left: 2em;
+  width: 3em;
+  height: 3em;
+  transform: translateY(-80%);
+}
+.txt p {
+  margin-bottom: 1em;
+  font-weight: 300;
+  max-inline-size: 32ch;
+  font-size: clamp(1em, 3vw, 1.5em);
+}
+.txt span {
+  font-size: 16px;
+}
+.txt .name {
+  color: var(--db);
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+}
+.txt .job {
+  color: var(--gb);
+  font-weight: 500;
+}
+section .photos {
+  position: relative;
+}
+.photos img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 0.3em;
+  transition: all 0.5s ease-in-out;
+}
+.photos .slider {
+  position: absolute;
+  bottom: 0%;
+  left: 10%;
+  transform: translateY(50%);
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  width: 6em;
+  height: 3em;
+  border-radius: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.photos .slider svg {
+  cursor: pointer;
+  margin: 0.7em;
+}
+
+
+
+
+
+/* Events */
+img.ani {
+  animation: visi 0.5s ease-in-out;
+}
+@keyframes visi {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+/* media Query */
+@media (max-width:1000px) {
+  body {
+    background-size: contain;
+  }
+  section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  section .txt {
+    transform: none;
+  }
+  section .photos .slider {
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
