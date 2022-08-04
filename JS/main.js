@@ -7,7 +7,7 @@ let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
 
 async function get() {
-  let url = "/JS/data.json";
+  let url = "./JS/data.json";
   let req = await fetch(url);
   let arr = await req.json();
 
